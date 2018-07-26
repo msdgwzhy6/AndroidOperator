@@ -61,9 +61,12 @@ public class AndroidOperator {
      */
     boolean action(String command) {
         try {
+            Thread.sleep(500L);
             execute.action(command);
             return true;
         } catch (IOException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
         return false;
